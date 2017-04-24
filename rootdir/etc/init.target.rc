@@ -406,6 +406,7 @@ service time_daemon /system/bin/time_daemon
    class late_start
    user root
    group root
+   disabled
 
 service atvc /system/bin/dbvc_atvc_property_set
     class main
