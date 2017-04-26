@@ -363,7 +363,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     user media
     group system camera inet input graphics
 
-service thermald /system/bin/thermald
+service thermald /system/bin/thermald -c /etc/thermald.conf
    class main
    user root
    group root
