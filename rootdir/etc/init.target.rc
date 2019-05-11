@@ -37,7 +37,7 @@ on early-init
 
 on init
     chmod 755 /f2fscheck.sh
-    exec /f2fscheck.sh
+    #exec /f2fscheck.sh
 
 on early-boot
 # Define Motorola DBVC ATVC Property defaults (failsafe properties)
@@ -128,7 +128,7 @@ on post-fs
     wait /dev/block/platform/msm_sdcc.1/by-name/pds
     exec /system/bin/mount_pds.sh
 
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro remount
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro
 
     # Load FIPS kernel module
     exec /system/bin/fips_loader /system/lib/modules
