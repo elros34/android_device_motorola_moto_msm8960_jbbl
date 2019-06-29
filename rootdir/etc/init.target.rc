@@ -368,10 +368,11 @@ service thermald /system/bin/thermald -c /etc/thermald.conf
    user root
    group root
 
-service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
+service mpdecision /system/bin/mpdecision_HYBRIS_DISABLED --no_sleep --avg_comp
    user root
    group root system
    disabled
+   oneshot
 
 service whisperd /system/bin/whisperd /dev/ttyHS1
     class core
