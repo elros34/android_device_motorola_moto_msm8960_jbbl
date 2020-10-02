@@ -89,7 +89,7 @@ on start-charging
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_iusb
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_usb_suspend
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_fail_clear
-    start batt_health
+    #start batt_health
     start whisperd
     start qcom-post-boot
     # Prepare for charge-only mode
@@ -144,8 +144,8 @@ on post-fs-data
     chmod 0640 /data/dontpanic/last_kmsg
 
     #load modules
-    insmod /system/lib/modules/cfg80211.ko
-    insmod /system/lib/modules/tcp_westwood.ko
+    #insmod /system/lib/modules/cfg80211.ko
+    #insmod /system/lib/modules/tcp_westwood.ko
     #initialize wlan
     write /dev/wcnss_wlan 1
     write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
@@ -397,6 +397,7 @@ service qseecomd /system/bin/qseecomd
 service batt_health /system/bin/batt_health
     class main
     group mot_pwric
+    disabled
 
 # Start kickstart if mdm is detected
 on property:ro.baseband=mdm
